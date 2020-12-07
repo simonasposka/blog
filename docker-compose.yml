@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+  nginx:
+    image: nginx:1.13.3
+    depends_on:
+      - php
+    volumes:
+      - ./docker-nginx.conf:/etc/nginx/nginx.conf
+      - ./:/var/www/html/:cached
+    ports:
+      - 80:80
+  php:
+    build:
+      context: ./docker
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/var/www/html/:cached
+  mysql:
+    image: mysql:5.7.20
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: default
+      MYSQL_USER: default
+      MYSQL_PASSWORD: secret
+    volumes:
+      - ./data/db:/var/lib/mysql
