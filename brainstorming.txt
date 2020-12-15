@@ -1,0 +1,14 @@
+We want to build a site that allows: viewing, creating, updating and deleting blog posts.
+
+### Post
+    -   image
+    -   tile
+    -   text
+    -   author_id -> users
+    -   created_at
+    -   updated_at
+
+### User
+    -   name
+    -   email
+    -   password
