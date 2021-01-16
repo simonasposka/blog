@@ -15,13 +15,15 @@
             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                 {{-- Header --}}
                 <div class="flex-shrink-0">
-                    <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="blog image">
+                    <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1602526430780-782d6b1783fa?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="blog image">
                 </div>
 
                 {{-- Contet --}}
                 <div class="flex-1 p-6 flex flex-col justify-between">
                     <div class="flex-1">
-                        <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">{{ $post->title }}</h3>
+                        <a href="/posts/{{ $post->id }}">
+                            <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">{{ $post->title }}</h3>
+                        </a>
                         <p class="mt-3 text-base leading-6 text-gray-500">
                             @if (strlen($post->text) > 200)
                                 {{ substr($post->text, 0, 200) }}...
