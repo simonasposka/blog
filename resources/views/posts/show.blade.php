@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="bg-gray-50 py-16 px-4 sm:gird sm:grid-cols-12">
+<div class="bg-gray-50 py-16 px-4 sm:grid sm:grid-cols-12">
     <div class="sm:col-start-4 sm:col-span-6">
         <a href="/">
             <div class="bg-white text-center px-4 py-3 rounded-sm shadow-sm hover:shadow-md">Back</div>
